@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Scrum</title>
+    {% load static %}
+    <script defer="defer" src="{% static './board/js/main.js' %}"></script>
+    <link href="{% static './board/css/main.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <aside id="#" class="sidebar"><a href="#" id="open-ScrumBoard">ScrumBoard</a> <a href="#" class="bord-section"></a>
+        <a href="#" class=""></a> <a href="#" class=""></a> <a href="#" class=""></a> <a href="#" class=""></a> <a
+            href="#" class=""></a></aside>
+
+    <div class="window">
+        <header class="header">
+            <div class="header__menu">
+                <div class="btn-group btn-left"><button class="open-aside btn" id="#">☰</button> <button
+                        class="btn">Кнопка</button> <button class="btn">Еще одна</button> <button class="btn">Их может
+                        быть больше</button></div>
+                <div id="btnSign" class="btn-group btn-right"><button id="open-form-sign" class="btn">Sign</button>
+                </div>
+            </div>
+        </header>
+
+        
+        <div class="wrapper">
+            <div class="form-wrapper sign-up" id="sign-up">
+                <form action="#">
+                    <h2 class="sign__title">SignUp</h2>
+                    <div class="sign__inputBox"><input name="username" required value="{{ username }}" > <label for="">Username</label></div>
+                    <div class="sign__inputBox"><input type="email" name="email" required value="{{ email }}"> <label for="">Email</label></div>
+                    <div class="sign__inputBox"><input type="password" name="password" required value="{{ password }}"> <label>Password</label>
+                    </div><button type="submit" class="sign__submit btn">Login</button>
+                    <div class="sign__link">
+                        <p>Already have an account? <a href="#" class="signIn-link">Sign In</a></p>
+                    </div>
+                </form>
+            </div>
+    
+    
+            <div class="form-wrapper sign-in" id="sign-in">
+                <form action="#" name="signin">
+                    {% csrf_token %}
+                    <h2 class="sign__title">Login</h2>
+                    <div class="sign__inputBox"><input name="username" required> <label for="">Username</label></div>
+                    <div class="sign__inputBox"><input type="password" name="password" required> <label>Enter
+                            password</label></div>
+                    <div class="sign__forgot_pass"><a href="#">Forgot Password?</a></div><button type="submit"
+                        class="sign__submit btn">Login</button>
+                    <div class="sign__link">
+                        <p>Don't have an account? <a href="#" class="signUp-link">SignUp</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <main class="main" id="main">
+            <div class="main__title" id="main__title"></div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <h2>Footer</h2>
+    </footer>
+</body>
+
+</html>
